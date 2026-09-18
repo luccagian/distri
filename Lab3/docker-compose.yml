@@ -1,0 +1,36 @@
+services:
+  master:
+    build: .
+    container_name: master
+    hostname: master
+    tty: true
+    networks:
+      - mpi_net
+
+  worker1:
+    build: .
+    container_name: worker1
+    hostname: worker1
+    tty: true
+    networks:
+      - mpi_net
+
+  worker2:
+    build: .
+    container_name: worker2
+    hostname: worker2
+    tty: true
+    networks:
+      - mpi_net
+
+  worker3:
+    build: .
+    container_name: worker3
+    hostname: worker3
+    tty: true
+    networks:
+      - mpi_net
+
+networks:
+  mpi_net:
+    driver: bridge
